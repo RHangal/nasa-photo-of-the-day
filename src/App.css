@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Main--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Main--imgContainer {
+  padding: 3rem;
+}
+
+#Main--img {
+  height: 30rem
+}
+
+.button--container {
+  margin:1rem;
+}
+
+#bodyTitle {
+  border: 2rem solid navy;
+}
+
+.doubleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.bodyPost--container {
+  padding: 3rem;
+  align-self: baseline;
+}
+
+.bodyPost--imgContainer {
+  padding: 1.5rem;
+}
+
+.bodyPost--img {
+  height: 20rem
+}
