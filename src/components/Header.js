@@ -1,5 +1,5 @@
 import React from "react";
-import nasaLogo from './images/NASA_logo.svg.png'
+import nasaLogo from '../images/NASA_logo.svg.png'
 export default function Header(props) {
 return (
     <header className="App-header">

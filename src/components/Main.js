@@ -4,6 +4,7 @@ export default function Main(props) {
     const {apod} = props
 return (
     <section id='Main'>
+        <h2>Current APOD</h2>
      <div className='Main--container'>
         <div className="Main--imgContainer">
             <img id='Main--img'src={`${apod.hdurl}`} alt="a celestial body NASA has captured and shared with the public for today's date"/>

@@ -2,9 +2,9 @@ import React, {useState, useEffect}from "react";
 import "./App.css";
 import { BASE_URL, API_KEY } from ".";
 import axios from 'axios'
-import Header from "./Header";
-import Main from "./Main";
-import Body from "./Body";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Body from "./components/Body";
 
 function App() {
 const [apod, setApod] = useState({})
@@ -47,8 +47,7 @@ const resetCount = () => {
       <Body countImages={countImages} count ={count} increaseCount={increaseCount} 
       decreaseCount={decreaseCount} resetCount={resetCount}/>
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+      <span role="img" aria-label='go!'>🚀</span>
       </p>
     </div>
   );

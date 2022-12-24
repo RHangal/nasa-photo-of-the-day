@@ -5,7 +5,7 @@ export default function BodyPost(props){
     return (
         <div className='bodyPost--container' key={Images.date}>
         <div className="bodyPost--imgContainer">
-            <img className='bodyPost--img'src={`${Images.hdurl}`} alt="a celestial body NASA has captured and shared with the public randomly retrieved based on the count"/>
+            {!Images.hdurl ? <h3>Loading...</h3> : <img className='bodyPost--img'src={`${Images.hdurl}`} alt="a celestial body NASA has captured and shared with the public randomly retrieved based on the count"/>}
         </div>
         <div className="bodyPost--articleContainer">
             <h2>{Images.title}</h2>

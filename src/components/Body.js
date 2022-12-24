@@ -14,6 +14,7 @@ export default function Body(props) {
         <section id="Body">
             <h2>APOD Gallery</h2>
            <h3> Image Count: {count} </h3>
+           <h4>Click the buttons below to change the Count!<br/>(Max 12, Min 1)</h4>
            <div className="button--container">
                <Button changeCount = {increaseCount} text='Increase Count'/>
                <Button changeCount = {decreaseCount} text='Decrease Count'/>
