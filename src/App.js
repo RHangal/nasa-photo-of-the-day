@@ -5,6 +5,7 @@ import axios from 'axios'
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 function App() {
 const [apod, setApod] = useState({})
@@ -46,9 +47,7 @@ const resetCount = () => {
       <Main apod={apod}/>
       <Body countImages={countImages} count ={count} increaseCount={increaseCount} 
       decreaseCount={decreaseCount} resetCount={resetCount}/>
-      <p>
-      <span role="img" aria-label='go!'>🚀</span>
-      </p>
+      <Footer />
     </div>
   );
 }

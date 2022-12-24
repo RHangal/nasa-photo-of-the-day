@@ -56,6 +56,7 @@
   margin:1rem;
 }
 
+
 #bodyTitle {
   border: 2rem solid navy;
 }
@@ -71,6 +72,7 @@
 .bodyPost--container {
   padding: 3rem;
   align-self: baseline;
+  width: 50%;
 }
 
 .bodyPost--imgContainer {
@@ -78,5 +80,16 @@
 }
 
 .bodyPost--img {
-  height: 20rem
+  height: 20rem;
+  max-width: 100%;
 }
+
+#footer {
+  background-color: #282c34;
+  color: white;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
