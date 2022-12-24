@@ -4,7 +4,8 @@ import Button from "./Button";
 
 export default function Body(props) {
     const{countImages, count, increaseCount, decreaseCount, resetCount} = props
-    console.log(countImages)
+    // use the following log to inspect incoming objects incase new Keys cause errors
+    // console.log(countImages)
     const bodyPost = countImages.map(Images=> BodyPost(Images={Images}))
     const twoBodyPost = []
     for (let i=0;i<bodyPost.length; i+=2) {
@@ -14,7 +15,7 @@ export default function Body(props) {
         <section id="Body">
             <h2>APOD Gallery</h2>
            <h3> Image Count: {count} </h3>
-           <h4>Click the buttons below to change the Count!<br/>(Max 12, Min 1)</h4>
+           <h4>Click the buttons below to randomly generate images based on the count!<br/>(Max 12, Min 1)</h4>
            <div className="button--container">
                <Button changeCount = {increaseCount} text='Increase Count'/>
                <Button changeCount = {decreaseCount} text='Decrease Count'/>

@@ -6,11 +6,15 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import Searchbar from "./components/Searchbar";
 
 function App() {
+const [apodDate, setapodDate] = useState({})  
 const [apod, setApod] = useState({})
 const [countImages, setCountImages] = useState([])
 const [count, setCount] = useState(4)
+const [searchDate, setSearchDate] = useState('')
+const [searchValue, setSearchValue] = useState('')
 
 const increaseCount = () => {
   if(count <12)
@@ -26,14 +30,23 @@ const resetCount = () => {
 }
 
 
-  useEffect( () => {axios.get(`${BASE_URL}?&api_key=${API_KEY}
+
+
+  useEffect( () => {axios.get(`${BASE_URL}?&thumbs=True&date=${searchDate}&api_key=${API_KEY}
+  `)
+    .then(res => {
+      return setapodDate(res.data)
+    }).catch(err => console.error(err))
+  }, [searchDate])
+
+  useEffect( () => {axios.get(`${BASE_URL}?&thumbs=True&api_key=${API_KEY}
   `)
     .then(res => {
       return setApod(res.data)
     }).catch(err => console.error(err))
   }, [])
 
-  useEffect( () => {axios.get(`${BASE_URL}?count=${count}&api_key=${API_KEY}
+  useEffect( () => {axios.get(`${BASE_URL}?count=${count}&thumbs=True&api_key=${API_KEY}
   `)
     .then(res => {
       return setCountImages(res.data)
@@ -44,7 +57,8 @@ const resetCount = () => {
   return (
     <div className="App">
       <Header />
-      <Main apod={apod}/>
+      <Searchbar searchDate={searchDate} searchValue={searchValue} setSearchValue={setSearchValue} setSearchDate={setSearchDate}/>
+      <Main apod={apod} apodDate={apodDate} searchDate={searchDate}/>
       <Body countImages={countImages} count ={count} increaseCount={increaseCount} 
       decreaseCount={decreaseCount} resetCount={resetCount}/>
       <Footer />
