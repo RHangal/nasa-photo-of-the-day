@@ -7,6 +7,14 @@ import Main from "./components/Main";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Searchbar from "./components/Searchbar";
+import styled from "styled-components";
+
+
+const DivApp = styled.div`
+    text-align: ${prop => prop.theme.textAlign};
+    background-color: ${prop => prop.theme.primary};
+    color: ${prop => prop.theme.textColor};
+`
 
 function App() {
 const [apodDate, setapodDate] = useState({})  
@@ -55,14 +63,14 @@ const resetCount = () => {
 
 
   return (
-    <div className="App">
+    <DivApp>
       <Header />
       <Searchbar searchDate={searchDate} searchValue={searchValue} setSearchValue={setSearchValue} setSearchDate={setSearchDate}/>
       <Main apod={apod} apodDate={apodDate} searchDate={searchDate}/>
       <Body countImages={countImages} count ={count} increaseCount={increaseCount} 
-      decreaseCount={decreaseCount} resetCount={resetCount}/>
+      decreaseCount={decreaseCount} resetCount={resetCount} />
       <Footer />
-    </div>
+    </DivApp>
   );
 }
 
