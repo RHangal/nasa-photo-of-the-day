@@ -23,9 +23,9 @@ export default function Body(props) {
            <h3> Image Count: {count} </h3>
            <h4>Click the buttons below to randomly generate images based on the count!<br/>(Max 12, Min 1)</h4>
                <div className="button--container">
-                   <Button value="blue" changeCount = {increaseCount} text='Increase Count'/>
-                   <Button value="red" changeCount = {decreaseCount} text='Decrease Count'/>
-                   <Button value="purple" changeCount = {resetCount} text='Reset Count'/>
+                   <Button type="blue" changeCount = {increaseCount} text='Increase Count'/>
+                   <Button type="red" changeCount = {decreaseCount} text='Decrease Count'/>
+                   <Button type="purple" changeCount = {resetCount} text='Reset Count'/>
                </div>
             <div id="bodyTitle">
             {twoBodyPost}

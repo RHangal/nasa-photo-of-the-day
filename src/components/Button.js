@@ -11,14 +11,18 @@ font-size: 1.5rem;
 font-weight: bold;
 font-family: sans-serif;
 
-${pr => (pr.value === "blue" ? `background-color: blue` : null)}
-${pr => (pr.value === "red" ? `background-color: red` : null)}
-${pr => (pr.value === "purple" ? `background-color: purple` : null)}
+
+
+:active {${pr=>(pr.type==="blue" ? `transform: translateY(-4px)` : `transform: translateY(4px)`)};}
+
+${pr => (pr.type === "blue" ? `background-color: blue` : null)}
+${pr => (pr.type === "red" ? `background-color: red` : null)}
+${pr => (pr.type === "purple" ? `background-color: purple` : null)}
 `
 
 export default function Button(props){
- const{changeCount, text, value} = props
+ const{changeCount, text, type} = props
     return(
-        <StyledButton value={value} onClick={changeCount}>{text}</StyledButton>
+        <StyledButton type={type} onClick={changeCount}>{text}</StyledButton>
     )
 }
